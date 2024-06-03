@@ -20,16 +20,6 @@ socks4 = []
 
 [dependencies]
 log = "0.4"
-tokio = { version = "1", features = ["io-util", "net", "time", "macros"] }
-anyhow = "1"
-thiserror = "1"
-tokio-stream = "0.1"
-async-trait = "0.1"
-
-# Dependencies for examples and tests
-[dev-dependencies]
-env_logger = "0.9"
-structopt = "0.3"
 tokio = { version = "1", features = [
     "io-util",
     "net",
@@ -37,6 +27,15 @@ tokio = { version = "1", features = [
     "rt-multi-thread",
     "macros",
 ] }
+anyhow = "1"
+thiserror = "1"
+tokio-stream = "0.1"
+async-trait = "0.1"
+env_logger = "0.9"
+structopt = "0.3"
+
+# Dependencies for examples and tests
+[dev-dependencies]
 tokio-test = "0.4"
 
 [[example]]
@@ -47,3 +46,8 @@ name = "client"
 
 [[example]]
 name = "simple_tcp_server"
+
+[[bin]]
+bench = false
+path = "bin/main.rs"
+name = "rs5s" # Rust socks5 server
